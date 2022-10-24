@@ -141,9 +141,9 @@ fn calculate() -> Uuid {
     <byteorder::NativeEndian as byteorder::ByteOrder>::write_u64(&mut bytes[8..], hasher.finish());
 
     uuid::Builder::from_bytes(bytes)
-        .set_variant(uuid::Variant::RFC4122)
-        .set_version(uuid::Version::Random)
-        .build()
+        .with_variant(uuid::Variant::RFC4122)
+        .with_version(uuid::Version::Random)
+        .into_uuid()
 }
 
 struct HashWriter<T: Hasher>(T);
