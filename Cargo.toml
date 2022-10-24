@@ -1,5 +1,5 @@
 [package]
-name = "build_id"
+name = "build_uuid"
 version = "0.3.0"
 license = "MIT OR Apache-2.0"
 authors = [
@@ -20,7 +20,7 @@ build = "build.rs"
 edition = "2021"
 
 [badges]
-maintenance = { status = "passively-maintained" }
+maintenance = { status = "actively-maintained" }
 
 [dependencies]
 byteorder = "1.4.3"

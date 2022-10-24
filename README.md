@@ -1,12 +1,13 @@
-# build_id
+# build_uuid
 
-[![Crates.io](https://img.shields.io/crates/v/build_id.svg?maxAge=86400)](https://crates.io/crates/build_id)
-[![MIT / Apache 2.0 licensed](https://img.shields.io/crates/l/build_id.svg?maxAge=2592000)](#License)
-[![Build Status](https://dev.azure.com/alecmocatta/build_id/_apis/build/status/tests?branchName=master)](https://dev.azure.com/alecmocatta/build_id/_build/latest?branchName=master)
+[![Crates.io](https://img.shields.io/crates/v/build_uuid.svg?maxAge=86400)](https://crates.io/crates/build_uuid)
+[![MIT / Apache 2.0 licensed](https://img.shields.io/crates/l/build_uuid.svg?maxAge=2592000)](#License)
 
-[Docs](https://docs.rs/build_id/0.2.1)
+[Docs](https://docs.rs/build_uuid/0.3.0)
 
-Obtain a [`Uuid`](https://docs.rs/uuid/0.8/uuid/) uniquely representing the
+THIS IS A FORK OF https://github.com/alecmocatta/build_id!
+
+Obtain a [`Uuid`](https://docs.rs/uuid/1.2.1/uuid/) uniquely representing the
 build of the current binary.
 
 This is intended to be used to check that different processes are indeed
@@ -24,8 +25,8 @@ binary at compile time).
 ## Examples
 
 ```rust
-let local_build_id = build_id::get();
-if local_build_id == remote_build_id {
+let local_build_uuid = build_uuid::get();
+if local_build_uuid == remote_build_uuid {
 	println!("We're running the same binary as remote!");
 } else {
 	println!("We're running a different binary to remote");

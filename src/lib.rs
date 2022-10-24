@@ -15,9 +15,9 @@
 //! # Examples
 //!
 //! ```
-//! # let remote_build_id = build_id::get();
-//! let local_build_id = build_id::get();
-//! if local_build_id == remote_build_id {
+//! # let remote_build_uuid = build_uuid::get();
+//! let local_build_uuid = build_uuid::get();
+//! if local_build_uuid == remote_build_uuid {
 //! 	println!("We're running the same binary as remote!");
 //! } else {
 //! 	println!("We're running a different binary to remote");
@@ -30,7 +30,7 @@
 //! `.note.gnu.build-id` on Linux; `LC_UUID` in Mach-O; etc), falling back to
 //! hashing the whole binary.
 
-#![doc(html_root_url = "https://docs.rs/build_id/0.2.1")]
+#![doc(html_root_url = "https://docs.rs/build_uuid/0.3.0")]
 #![warn(
     missing_copy_implementations,
     missing_debug_implementations,
@@ -73,12 +73,12 @@ static BUILD_ID: Lazy<Uuid> = Lazy::new(calculate);
 /// # Examples
 ///
 /// ```
-/// # let remote_build_id = build_id::get();
-/// let local_build_id = build_id::get();
-/// if local_build_id == remote_build_id {
-/// 	println!("We're running the same binary as remote!");
+/// # let remote_build_uuid = build_uuid::get();
+/// let local_build_uuid = build_uuid::get();
+/// if local_build_uuid == remote_build_uuid {
+///     println!("We're running the same binary as remote!");
 /// } else {
-/// 	println!("We're running a different binary to remote");
+///     println!("We're running a different binary to remote");
 /// }
 /// ```
 ///
