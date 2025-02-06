@@ -44,17 +44,17 @@
 )] // from https://github.com/rust-unofficial/patterns/blob/master/anti_patterns/deny-warnings.md
 #![allow(clippy::must_use_candidate)]
 
-use once_cell::sync::Lazy;
 use std::{
     any::TypeId,
     env,
     fs::File,
     hash::{Hash, Hasher},
     io,
+    sync::LazyLock,
 };
 use uuid::Uuid;
 
-static BUILD_ID: Lazy<Uuid> = Lazy::new(calculate);
+static BUILD_ID: LazyLock<Uuid> = LazyLock::new(calculate);
 
 /// Returns a [Uuid] uniquely representing the build of the current binary.
 ///
